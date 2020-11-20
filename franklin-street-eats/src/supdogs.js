@@ -3,7 +3,7 @@ import { Title, Tile, Box, Container, Image, Button, Subtitle, Input } from 'blo
 import 'bulma/css/bulma.css';
 import { Link } from "react-router-dom";
 
-function Topo() {
+function SupDogs() {
     return (
         <div>
             <Container>
@@ -12,12 +12,12 @@ function Topo() {
                         </Box>
                         
                         <Box hasTextAlign='centered' className="is-shadowless">
-                            <Title isSize={1}>Top of the Hill</Title>
+                            <Title isSize={1}>Sup Dogs</Title>
                         </Box>
             </Container>
 
             <Box hasTextAlign='centered' className="is-shadowless">
-                <Subtitle isSize={5}>Leave a review for Top of the Hill!</Subtitle>
+                <Subtitle isSize={5}>Leave a review for Sup Dogs!</Subtitle>
                 <Input type="text" placeholder='' isSize='large'/>
                 <Button isColor='primary' className="mt-4 mr-3">Submit</Button>
                 <Button isColor='warning' className="mt-4">Cancel</Button>
@@ -52,12 +52,12 @@ function Topo() {
             </Container>
 
             <Container>
-                <Title isSize={3} className="mt-6 ml-2">Visit Top of the Hill:</Title>   
+                <Title isSize={3} className="mt-6 ml-2">Visit Sup Dogs:</Title>   
                 <Tile isAncestor>
                     <Tile isParent isSize={6}>
                         <Tile isChild>
                             <Box>
-                                <Image isRatio="square" src="https://images.squarespace-cdn.com/content/v1/537261a3e4b06f7436cc8d37/1595376688715-AI8U9BVQ4LF2ZW5VTD20/ke17ZwdGBToddI8pDm48kDqf82JwEoX4WzmayRgEIm97gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1Ub0j9LjuCwHwZ8uVqEGGNX85i1MTsqe7P3W_dlTINWCJbd_6_chhqv-nBOr8t60dZw/ncaa-championship-2017-114%2Bcopy.jpg?format=2500w" />
+                                <Image isRatio="square" src="https://snworksceo.imgix.net/dth/14674381-f695-4f43-a2dc-f5469aebcc20.sized-1000x1000.jpg?w=1000" />
 
                             </Box>
                         </Tile>
@@ -76,4 +76,4 @@ function Topo() {
     );
 }
 
-export default Topo;
+export default SupDogs;
