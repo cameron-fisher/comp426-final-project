@@ -4,11 +4,34 @@ import 'bulma/css/bulma.css';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
+const express = require('express');
+const app = express();
+const cosmicReview = require('./cosmicReview.js');
+
+app.get('/cosmicReview', (req, res) => {
+    res.json(cosmicReview.getAllIDs());
+});
+
+app.get('/cosmicReview/:id', (req, res) => {
+    let b = cosmicReview.findByID(req.params.id);
+    if (b == null) {
+        res.status(404).send("Review not found");
+        return;
+    }
+    res.json(b);
+} );
+
+const port = port = process.env.PORT || 80;
+
+app.listen(port, () => {
+
+});
+
 export const loadReviews = async function () {
     let result = await axios({
         method: 'get',
-        url: "https://localhost:3001/public",
-        //url: "https://stark-shelf-53955.herokuapp.com/#/",
+        //url: "https://localhost:3001/public",
+        url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
         withCredentials: true,
         params: {
             where: { 
@@ -51,11 +74,11 @@ export const composeReview = async function() {
 
    await axios({
        method: 'post',
-       url: "https://localhost:3001/public",
-       //url: "https://stark-shelf-53955.herokuapp.com/#/",
+       //url: "https://localhost:3001/public",
+       url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
        withCredentials: true,
        data: {
-           type: 'review',
+           //type: 'review',
            body: bodyText
        }
    });
