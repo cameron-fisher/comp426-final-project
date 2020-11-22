@@ -2,6 +2,67 @@ import React from 'react';
 import { Title, Tile, Box, Container, Image, Button, Subtitle, Input } from 'bloomer';
 import 'bulma/css/bulma.css';
 import { Link } from "react-router-dom";
+import axios from 'axios';
+
+export const loadReviews = async function () {
+    let result = await axios({
+        method: 'get',
+        url: "https://stark-shelf-53955.herokuapp.com/#/",
+        withCredentials: true,
+        params: {
+            where: { 
+                type: 'review' 
+            }
+        }
+    });
+
+    //here it is 3 times becaue we have 3 place holders
+    //when we get more update the amount of reviews we want
+    for(let i = 0; i < 3; i++)
+    {
+        if(i < result.data.length)
+        {
+            document.getElementById('postedReview'+i).innerText = result.data[i];
+        }
+        //within this place the results in each of the preset review spots and maybe append extra reviews depending on how we want to do it
+    }
+}
+
+//do window.location.reload(false); whenever we call loadReviews or change any element of the page
+//Also call this fucntion whenever we upload a tweet
+
+//add in url to axios function
+export const submitClicked = function() {
+    //composeReview(document.getElementById("textArea").value.toString());
+    composeReview();
+
+    //$('#textArea').hide();
+    //$('.composeButton').show();
+    //$('.submitButton').hide();
+
+    //reload();
+}
+
+//add URL
+export const composeReview = async function() {
+    let bodyText = document.getElementById("textArea").value.toString();
+    //let bodyText = "Test to see if this is the problem";
+
+   await axios({
+       method: 'post',
+       url: "https://stark-shelf-53955.herokuapp.com/#/",
+       withCredentials: true,
+       data: {
+           type: 'review',
+           body: bodyText
+       }
+   });
+
+   loadReviews();
+
+   //window.location.reload(false);
+ 
+}
 
 function Cosmic() {
     return (
