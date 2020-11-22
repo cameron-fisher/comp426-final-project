@@ -10,6 +10,7 @@
     "bloomer": "^0.6.5",
     "browser-sync": "^2.26.13",
     "bulma": "^0.9.1",
+    "google-maps-react": "^2.0.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",

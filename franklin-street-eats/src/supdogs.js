@@ -57,15 +57,21 @@ function SupDogs() {
                     <Tile isParent isSize={6}>
                         <Tile isChild>
                             <Box>
-                                <Image isRatio="square" src="https://snworksceo.imgix.net/dth/14674381-f695-4f43-a2dc-f5469aebcc20.sized-1000x1000.jpg?w=1000" />
+                                <Image isRatio="4:3" src="https://snworksceo.imgix.net/dth/14674381-f695-4f43-a2dc-f5469aebcc20.sized-1000x1000.jpg?w=1000" />
 
                             </Box>
                         </Tile>
                     </Tile>
                     <Tile isParent isSize={6}>
                         <Tile isChild>
-                            <Box>
-                                <p>Placeholder for where we could put the Google Maps API.</p>
+                            <Box hasTextAlign='centered' className="py-5">
+                                <iframe
+                                width="600"
+                                height="450"
+                                frameborder="0" style={{border:0}}
+                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC0toMAzZr-HPFuDHbzNg86ty2tnP-nh5Q
+                                    &q=Sup+Dogs,Chapel+Hill+NC" allowfullscreen="">
+                                </iframe>
                             </Box>
                         </Tile>
 

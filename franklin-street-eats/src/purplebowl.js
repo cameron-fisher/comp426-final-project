@@ -57,15 +57,21 @@ function PurpleBowl() {
                     <Tile isParent isSize={6}>
                         <Tile isChild>
                             <Box>
-                                <Image isRatio="square" src="https://media.thetab.com/blogs.dir/104/files/2017/07/7e1d12542a32cef0b875ceef57bc25941501512516522.jpeg" />
+                                <Image isRatio="4:3" src="https://media.thetab.com/blogs.dir/104/files/2017/07/7e1d12542a32cef0b875ceef57bc25941501512516522.jpeg" />
 
                             </Box>
                         </Tile>
                     </Tile>
                     <Tile isParent isSize={6}>
                         <Tile isChild>
-                            <Box>
-                                <p>Placeholder for where we could put the Google Maps API.</p>
+                            <Box hasTextAlign='centered' className="py-5">
+                                <iframe
+                                width="600"
+                                height="450"
+                                frameborder="0" style={{border:0}}
+                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC0toMAzZr-HPFuDHbzNg86ty2tnP-nh5Q
+                                    &q=Purple+Bowl,Chapel+Hill+NC" allowfullscreen="">
+                                </iframe>
                             </Box>
                         </Tile>
 

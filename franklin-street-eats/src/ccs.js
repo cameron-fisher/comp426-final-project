@@ -57,15 +57,21 @@ function CCS() {
                     <Tile isParent isSize={6}>
                         <Tile isChild>
                             <Box>
-                                <Image isRatio="square" src="https://images.squarespace-cdn.com/content/v1/521b6de9e4b03aa034dec5dc/1597009876899-F4NXXL6EYQ153E9VZVG2/ke17ZwdGBToddI8pDm48kDHPSfPanjkWqhH6pl6g5ph7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwONMR1ELp49Lyc52iWr5dNb1QJw9casjKdtTg1_-y4jz4ptJBmI9gQmbjSQnNGng/Front.jpeg?format=1500w" />
+                                <Image isRatio="4:3" src="https://images.squarespace-cdn.com/content/v1/521b6de9e4b03aa034dec5dc/1597009876899-F4NXXL6EYQ153E9VZVG2/ke17ZwdGBToddI8pDm48kDHPSfPanjkWqhH6pl6g5ph7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0mwONMR1ELp49Lyc52iWr5dNb1QJw9casjKdtTg1_-y4jz4ptJBmI9gQmbjSQnNGng/Front.jpeg?format=1500w" />
 
                             </Box>
                         </Tile>
                     </Tile>
                     <Tile isParent isSize={6}>
                         <Tile isChild>
-                            <Box>
-                                <p>Placeholder for where we could put the Google Maps API.</p>
+                            <Box hasTextAlign='centered' className="py-5">
+                                <iframe
+                                width="600"
+                                height="450"
+                                frameborder="0" style={{border:0}}
+                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC0toMAzZr-HPFuDHbzNg86ty2tnP-nh5Q
+                                    &q=Carolina+Coffee+Shop,Chapel+Hill+NC" allowfullscreen="">
+                                </iframe>
                             </Box>
                         </Tile>
 

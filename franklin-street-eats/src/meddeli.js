@@ -57,15 +57,21 @@ function MedDeli() {
                     <Tile isParent isSize={6}>
                         <Tile isChild>
                             <Box>
-                                <Image isRatio="square" src="https://navigatingfoodatunc.web.unc.edu/files/2016/11/restarauntfront.jpg" />
+                                <Image isRatio="4:3" src="https://navigatingfoodatunc.web.unc.edu/files/2016/11/restarauntfront.jpg" />
 
                             </Box>
                         </Tile>
                     </Tile>
                     <Tile isParent isSize={6}>
                         <Tile isChild>
-                            <Box>
-                                <p>Placeholder for where we could put the Google Maps API.</p>
+                            <Box hasTextAlign='centered' className="py-5">
+                                <iframe
+                                width="600"
+                                height="450"
+                                frameborder="0" style={{border:0}}
+                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC0toMAzZr-HPFuDHbzNg86ty2tnP-nh5Q
+                                    &q=Mediterranean+Deli,Chapel+Hill+NC" allowfullscreen="">
+                                </iframe>
                             </Box>
                         </Tile>
 

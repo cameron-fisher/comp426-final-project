@@ -57,15 +57,21 @@ function PizzaPress() {
                     <Tile isParent isSize={6}>
                         <Tile isChild>
                             <Box>
-                                <Image isRatio="square" src="https://dta0yqvfnusiq.cloudfront.net/thepi17077521/2018/04/chapelhill-5b60cdc85b0d0.jpg" />
+                                <Image isRatio="4:3" src="https://dta0yqvfnusiq.cloudfront.net/thepi17077521/2018/04/chapelhill-5b60cdc85b0d0.jpg" />
 
                             </Box>
                         </Tile>
                     </Tile>
                     <Tile isParent isSize={6}>
                         <Tile isChild>
-                            <Box>
-                                <p>Placeholder for where we could put the Google Maps API.</p>
+                            <Box hasTextAlign='centered' className="py-5">
+                                <iframe
+                                width="600"
+                                height="450"
+                                frameborder="0" style={{border:0}}
+                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC0toMAzZr-HPFuDHbzNg86ty2tnP-nh5Q
+                                    &q=Pizza+Press,Chapel+Hill+NC" allowfullscreen="">
+                                </iframe>
                             </Box>
                         </Tile>
 
