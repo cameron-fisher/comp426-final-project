@@ -7,7 +7,7 @@ import axios from 'axios';
 export const loadReviews = async function () {
     let result = await axios({
         method: 'get',
-        url: "https://opal.ils.unc.edu/~cnfisher/franklin-street-eats/",
+        url: "https://ec2-52-15-169-62.us-east-2.compute.amazonaws.com/",
         withCredentials: true,
         params: {
             where: { 
@@ -33,7 +33,8 @@ export const loadReviews = async function () {
 
 //add in url to axios function
 export const submitClicked = function() {
-    composeReview(document.getElementById("textArea").value.toString());
+    //composeReview(document.getElementById("textArea").value.toString());
+    composeReview();
 
     //$('#textArea').hide();
     //$('.composeButton').show();
@@ -45,10 +46,11 @@ export const submitClicked = function() {
 //add URL
 export const composeReview = async function() {
     let bodyText = document.getElementById("textArea").value.toString();
+    //let bodyText = "Test to see if this is the problem";
 
    await axios({
        method: 'post',
-       url: "https://opal.ils.unc.edu/~cnfisher/franklin-street-eats/",
+       url: "https://ec2-52-15-169-62.us-east-2.compute.amazonaws.com/",
        withCredentials: true,
        data: {
            type: 'review',
@@ -89,7 +91,7 @@ function Cosmic() {
                         <Tile isChild>
                             <Box>
                                 <Title isSize={3}>Placeholder Name</Title>
-                                <p id="postedReview1">This is a placeholder. When we figure out how to connect the backend this is where the review text will go.</p>
+                                <p id="postedReview1">This would be the Placeholder 1st review</p>
                             </Box>
                         </Tile>
 
