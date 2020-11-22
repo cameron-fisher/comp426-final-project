@@ -7,7 +7,8 @@ import axios from 'axios';
 export const loadReviews = async function () {
     let result = await axios({
         method: 'get',
-        url: "https://stark-shelf-53955.herokuapp.com/#/",
+        url: "https://localhost:3001/public",
+        //url: "https://stark-shelf-53955.herokuapp.com/#/",
         withCredentials: true,
         params: {
             where: { 
@@ -50,7 +51,8 @@ export const composeReview = async function() {
 
    await axios({
        method: 'post',
-       url: "https://stark-shelf-53955.herokuapp.com/#/",
+       url: "https://localhost:3001/public",
+       //url: "https://stark-shelf-53955.herokuapp.com/#/",
        withCredentials: true,
        data: {
            type: 'review',
