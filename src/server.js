@@ -68,7 +68,7 @@ app.post('/signup', (req, res) => {
 
 app.get('/logout', (req, res) => {
     delete req.session.user;
-    req.json(true);
+    res.json(true);
 })
 
 

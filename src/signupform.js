@@ -1,7 +1,7 @@
 import React from 'react';
 import InputField from './login/inputfield';
 import SubmitButton from './login/submitbutton';
-import UserStore from './login/userstore';
+//import UserStore from './login/userstore';
 import { Title, Tile, Box, Container, Image, Button, Subtitle } from 'bloomer';
 import axios from 'axios';
 
@@ -40,9 +40,14 @@ class SignupForm extends React.Component {
         let password = this.state.password;
         
         try {
-            const result = await axios.post('http://localhost:5000/signup', {"user": username, "password": password});
-            alert("Welcome " + username);
-            this.resetForm();
+            if (this.state.loggedIn === false) {
+                const result = await axios.post('http://localhost:5000/signup', {"user": username, "password": password});
+                alert("Welcome " + username);
+                this.state.loggedIn = true;
+                this.resetForm();
+            } else {
+                alert("You are already logged in");
+            }
         } catch (e) {
             alert("This user already exists");
         }
@@ -83,9 +88,6 @@ class SignupForm extends React.Component {
                         />
                         </Box>
 
-                        
-
-                        
 
                     </Box>
                 </Container>

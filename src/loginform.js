@@ -1,7 +1,7 @@
 import React from 'react';
 import InputField from './login/inputfield';
 import SubmitButton from './login/submitbutton';
-import UserStore from './login/userstore';
+//import UserStore from './login/userstore';
 import { Title, Tile, Box, Container, Image, Button, Subtitle } from 'bloomer';
 import axios from 'axios';
 
@@ -56,6 +56,17 @@ class LoginForm extends React.Component {
 
     }
 
+    async doLogout() {
+        if (this.state.loggedIn === false) {
+            alert("You are not logged in");
+        } else {
+            const result = await axios.get('http://localhost:5000/logout', {"user": this.state.username, "password": this.state.password});
+            this.state.loggedIn = false;
+            alert("Log Out successful");
+            this.resetForm();
+        }
+    }
+
     render() {
         return (
             <div className="loginForm" id="login">
@@ -88,6 +99,16 @@ class LoginForm extends React.Component {
                             disabled={this.state.buttonDisabled}
                             onClick={ () => this.doLogin()}
                         />
+                        
+                        <Box hasTextAlign='centered' className='is-shadowless' style= {{padding: 10}}>
+                        <SubmitButton
+                            text="Logout"
+                            disabled={this.state.buttonDisabled}
+                            onClick={ () => this.doLogout()}
+                        />
+                        </Box>
+                        
+                        
                         </Box>
 
                         
