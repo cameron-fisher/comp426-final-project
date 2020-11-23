@@ -9,9 +9,11 @@ class cosmicReview
     }
 }
 
-cosmicReview.getAllIDs() = () => {
+cosmicReview.getAllIDs = () => {
     //returns an array of all ids
-    return Object.keys(review_data.data).map((id => {return parseInt(id);}));
+    return Object.keys(review_data.data).map((id => {
+        return parseInt(id);
+    }));
 }
 
 cosmicReview.findByID = (id) => {
