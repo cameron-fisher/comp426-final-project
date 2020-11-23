@@ -24,6 +24,13 @@ cosmicReview.findByID = (id) => {
     return null;
 }
 
+cosmicReview.next_id = cosmicReview.getAllIDs().reduce((max, next_id) => {
+    if (max < next_id) {
+        return next_id;
+    }
+    return max;
+}, -1) + 1;
+
 cosmicReview.create = (body) => {
     let id = cosmicReview.next_id;
     cosmicReview.next_id += 1;
