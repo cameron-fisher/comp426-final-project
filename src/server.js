@@ -49,11 +49,11 @@ app.post('/signup', (req, res) => {
     let user = req.body.user;
     let password = req.body.password;
 
-    let user = login_data.get(user);
+    let user_data = login_data.get(user);
 
-    console.log(user);
+    console.log(user_data);
 
-    if (login_data.get(user) === null) {
+    if (login_data.get(user) === undefined) {
 
         login_data.set(user, {"password": password});
         console.log("success");
