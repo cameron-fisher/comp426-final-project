@@ -49,12 +49,13 @@ export const loadReviews = async function () {
         method: 'get',
         //url: "https://localhost:3001/public",
         url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
-        withCredentials: true,
+        withCredentials: true/* ,
         params: {
             where: { 
                 type: 'review' 
             }
         }
+        */
     });
 
     //here it is 3 times becaue we have 3 place holders
