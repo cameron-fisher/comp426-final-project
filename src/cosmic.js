@@ -8,6 +8,9 @@ const express = require('express');
 const app = express();
 const cosmicReview = require('./cosmicReview.js');
 
+const bodyParser = require('body-parser');
+app.use(bodyParser.json());
+
 app.get('/cosmicReview', (req, res) => {
     res.json(cosmicReview.getAllIDs());
 });
@@ -27,6 +30,20 @@ app.listen(port, () => {
 
 });
 
+// consider doing something like const onSubmit = this function and then call that on onClick
+app.post('/cosmicReview', (req, res) => {
+    let {body} = req.body;
+
+    let review = cosmicReview.create(body);
+
+    if (review == null) {
+        res.status(400).send("Bad Request");
+        return;
+    }
+    return res.json(review);
+});
+
+//convert this and the other one to non axios
 export const loadReviews = async function () {
     let result = await axios({
         method: 'get',
