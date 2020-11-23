@@ -10,6 +10,8 @@ import Spicy9 from './spicy9';
 import SupDogs from './supdogs';
 import Home from './home'
 import React from 'react';
+import Login from './login';
+import SignUp from './signup';
 
 const Root = (
     <HashRouter>
@@ -20,9 +22,11 @@ const Root = (
                 <Route path="/ccs" component={CCS}/>
                 <Route path="/cosmic" component={Cosmic}/>
                 <Route path="/lindas" component={Lindas}/>
+                <Route path="/login" component={Login}/>
                 <Route path="/meddeli" component={MedDeli}/>
                 <Route path="/pizzapress" component={PizzaPress}/>
                 <Route path="/purplebowl" component={PurpleBowl}/>
+                <Route path="/signup" component={SignUp}/>
                 <Route path="/spicy9" component={Spicy9}/>
                 <Route path="/supdogs" component={SupDogs}/>
                 <Route component={Home}/>

@@ -7,10 +7,16 @@ import { Link } from "react-router-dom";
 function Home() {
     return (
         <div>
-        <Box hasTextAlign='centered' className="is-shadowless">
-                <Title isSize={1}>Franklin Street Eats</Title>
-                <Subtitle isSize={5}>Click the green 'Review' buttons to leave your thoughts on Franklin Street restaurants!</Subtitle>
-        </Box>
+        <Container>
+                    <Box className="is-shadowless">
+                        <Link to="/login"><Button isColor='primary' className="is-pulled-right">Login</Button></Link>
+                    </Box>
+                    
+                    <Box hasTextAlign='centered' className="is-shadowless">
+                        <Title isSize={1}>Franklin Street Eats</Title>
+                        <Subtitle isSize={5}>Click the green 'Review' buttons to leave your thoughts on Franklin Street restaurants!</Subtitle>
+                    </Box>
+        </Container>
 
         <Container>
             <Tile isAncestor>
