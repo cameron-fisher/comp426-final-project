@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import axios from 'axios';
 //import express from 'express';
 
+/*
 const express = require('express');
 const app = express();
 const cosmicReview = require('./cosmicReview.js');
@@ -24,13 +25,13 @@ app.get('/cosmicReview/:id', (req, res) => {
     }
     res.json(b);
 } );
-/*
+
 const port = port = process.env.PORT || 80;
 
 app.listen(port, () => {
 
 });
-*/
+
 
 // consider doing something like const onSubmit = this function and then call that on onClick
 app.post('/cosmicReview', (req, res) => {
@@ -44,6 +45,7 @@ app.post('/cosmicReview', (req, res) => {
     }
     return res.json(review);
 });
+*/
 
 //convert this and the other one to non axios
 export const loadReviews = async function () {
