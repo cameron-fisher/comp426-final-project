@@ -24,12 +24,13 @@ app.get('/cosmicReview/:id', (req, res) => {
     }
     res.json(b);
 } );
-
+/*
 const port = port = process.env.PORT || 80;
 
 app.listen(port, () => {
 
 });
+*/
 
 // consider doing something like const onSubmit = this function and then call that on onClick
 app.post('/cosmicReview', (req, res) => {
