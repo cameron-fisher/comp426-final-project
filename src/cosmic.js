@@ -3,15 +3,25 @@ import { Title, Tile, Box, Container, Image, Button, Subtitle, Input } from 'blo
 import 'bulma/css/bulma.css';
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import http from "http";
+import { normalize } from 'path';
 //import express from 'express';
 
-/*
+
 const express = require('express');
 const app = express();
 const cosmicReview = require('./cosmicReview.js');
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
+
+
+const port = normalizePort(process.env.PORT || '3030');
+app.set('port', port);
+
+const server = http.createServer(app);
+
+server.listen(port);
 
 app.get('/cosmicReview', (req, res) => {
     res.json(cosmicReview.getAllIDs());
@@ -25,8 +35,6 @@ app.get('/cosmicReview/:id', (req, res) => {
     }
     res.json(b);
 } );
-
-const port = port = process.env.PORT || 80;
 
 app.listen(port, () => {
 
@@ -45,7 +53,7 @@ app.post('/cosmicReview', (req, res) => {
     }
     return res.json(review);
 });
-*/
+
 
 //convert this and the other one to non axios
 export const loadReviews = async function () {

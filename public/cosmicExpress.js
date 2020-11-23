@@ -1,6 +1,6 @@
 import express from 'express';
 const app = express();
-import { getAllIDs, findByID, create } from './cosmicReview.js';
+import { getAllIDs, findByID, create } from '../src/cosmicReview.js';
 
 import { json } from 'body-parser';
 app.use(json());
