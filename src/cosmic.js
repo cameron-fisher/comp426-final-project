@@ -4,7 +4,6 @@ import 'bulma/css/bulma.css';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 //import http from "http";
-//import { normalize } from 'path';
 //import express from 'express';
 
 
@@ -16,9 +15,9 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
 const http = require('http');
-const normalizePort = require('normalize-port');
 
-const port = normalizePort(process.env.PORT || '3030');
+
+const port = process.env.PORT || '3030';
 app.set('port', port);
 
 const server = http.createServer(app);
