@@ -1,16 +1,16 @@
-const express = require('express');
+import express from 'express';
 const app = express();
-const cosmicReview = require('./cosmicReview.js');
+import { getAllIDs, findByID, create } from './cosmicReview.js';
 
-const bodyParser = require('body-parser');
-app.use(bodyParser.json());
+import { json } from 'body-parser';
+app.use(json());
 
 app.get('/cosmicReview', (req, res) => {
-    res.json(cosmicReview.getAllIDs());
+    res.json(getAllIDs());
 });
 
 app.get('/cosmicReview/:id', (req, res) => {
-    let b = cosmicReview.findByID(req.params.id);
+    let b = findByID(req.params.id);
     if (b == null) {
         res.status(404).send("Review not found");
         return;
@@ -29,7 +29,7 @@ app.listen(port, () => {
 app.post('/cosmicReview', (req, res) => {
     let {body} = req.body;
 
-    let review = cosmicReview.create(body);
+    let review = create(body);
 
     if (review == null) {
         res.status(400).send("Bad Request");
