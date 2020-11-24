@@ -11,7 +11,8 @@ export const loadReviews = async function () {
         method: 'get',
         url: "http://localhost:5000/cosmicReviews/", //
         //url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
-        withCredentials: true/* ,
+        //withCredentials: true
+        /* ,
         params: {
             where: { 
                 type: 'review' 
@@ -57,7 +58,7 @@ export const composeReview = async function() {
        method: 'post',
        url: "http://localhost:5000/cosmicReviews/",
        //url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
-       withCredentials: true,
+       //withCredentials: true,
        data: {
            //type: 'review',
            "body": bodyText
