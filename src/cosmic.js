@@ -6,8 +6,6 @@ import axios from 'axios';
 
 const review_data = require('data-store')({ path: process.cwd() + '/data/cosmicReviews.json' });
 
-
-//convert this and the other one to non axios
 export const loadReviews = async function () {
     let result = await axios({
         method: 'get',
@@ -39,19 +37,11 @@ export const loadReviews = async function () {
     */
 }
 
-//do window.location.reload(false); whenever we call loadReviews or change any element of the page
-//Also call this fucntion whenever we upload a tweet
-
 //add in url to axios function
 export const submitClicked = function() {
     //composeReview(document.getElementById("textArea").value.toString());
     composeReview();
 
-    //$('#textArea').hide();
-    //$('.composeButton').show();
-    //$('.submitButton').hide();
-
-    //reload();
 }
 
 //add URL
@@ -63,17 +53,12 @@ export const composeReview = async function() {
    await axios({
        method: 'post',
        url: "http://localhost:5000/cosmicReviews/",
-       //url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
-       //withCredentials: true,
        data: {
-           //type: 'review',
            "body": bodyText
        }
    });
 
    loadReviews();
-
-   //window.location.reload(false);
  
 }
 
