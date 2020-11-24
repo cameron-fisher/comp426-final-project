@@ -11,7 +11,7 @@ const review_data = require('data-store')({ path: process.cwd() + '/data/cosmicR
 export const loadReviews = async function () {
     let result = await axios({
         method: 'get',
-        url: "http://localhost:5000/cosmicReviews/", //
+        url: "http://localhost:5000/cosmicReviews", //
         //url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
         //withCredentials: true
         /* ,
@@ -23,7 +23,7 @@ export const loadReviews = async function () {
         */
     });
 
-    document.getElementById("reviews").append(review_data.get(0));
+    document.getElementById("reviews").append(review_data.get('0'));
     /*
     //here it is 3 times becaue we have 3 place holders
     //when we get more update the amount of reviews we want
@@ -62,7 +62,7 @@ export const composeReview = async function() {
     //let bodyText = "test text";
    await axios({
        method: 'post',
-       url: "http://localhost:5000/cosmicReviews/",
+       url: "http://localhost:5000/cosmicReviews",
        //url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
        //withCredentials: true,
        data: {
