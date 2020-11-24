@@ -10,9 +10,7 @@ import generateReviews from './generateReviews';
 const review_data = require('./data/cosmicReviews.json');
 
 export const loadReviews = function () {
-    //need a line to replace tile isparent element in the dom
     ReactDOM.render(ReactHtmlParser(generateReviews(review_data)), document.getElementById('reviews-parent'));
-
 }
 
 //add in url to axios function
@@ -20,19 +18,13 @@ export const submitClicked = function() {
     //composeReview(document.getElementById("textArea").value.toString());
     composeReview();
     //console.log(review_data)
-    // return generateReviews(review_data)
     //ReactDOM.render(ReactHtmlParser(generateReviews(review_data)), document.getElementById('reviews-parent'));
-
-    //if above doesn't work try:
-    //ReactDOM.render(generateReviews(review_data), document.getElementById('reviews-parent'));
 }
 
 //add URL
 export const composeReview = async function() {
     let bodyText = document.getElementById("textArea").value.toString();
-    //let bodyText = "Test to see if this is the problem";
-
-    //let bodyText = "test text";
+    
    await axios({
        method: 'post',
        url: "http://localhost:5000/cosmicReviews/",

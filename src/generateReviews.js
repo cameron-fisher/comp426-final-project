@@ -10,5 +10,5 @@ export default function generateReviews(review_data) {
         }
       }
     //console.log(string)
-    return string
+    return string;
 }
