@@ -22,6 +22,8 @@ const Secret = require("./Secret");
 
 const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
 
+
+//beginning of cosmic reviews
 const cosmicReview = require("./cosmicReview");
 const review_data = require('data-store')({ path: process.cwd() + '/data/cosmicReviews.json' });
 
@@ -55,9 +57,10 @@ app.post('/cosmicReviews', (req, res) => {
     review_data.set(req.body.body);
     res.json(true);
     return;
-
-    //return res.json(review);
 });
+
+
+//end of cosmic reviews
 
 app.post('/login', (req, res) => {
 
@@ -210,3 +213,332 @@ app.get("/", (req, res) => {
   });
 
 //export default app;
+
+
+//topo stuff here
+
+
+const topoReview = require("./cosmicReview");
+const toporeview_data = require('data-store')({ path: process.cwd() + '/data/topoReviews.json' });
+
+app.get('/topoReviews', (req, res) => {
+    res.json(topoReview.getAllIDs());
+    return;
+});
+
+
+app.get('/topoReviews/:id', (req, res) => {
+    let b = topoReview.findByID(req.params.id);
+    if (b == null) {
+        res.status(404).send("Review not found");
+        return;
+    }
+    res.json(b);
+} );
+
+
+// consider doing something like const onSubmit = this function and then call that on onClick
+app.post('/topoReviews', (req, res) => {
+    //let {body} = req.body;
+
+    let review = topoReview.create(req.body.body);
+
+    if (review == null) {
+        res.status(400).send("Bad Request");
+        return;
+    }
+
+    toporeview_data.set(req.body.body);
+    res.json(true);
+    return;
+});
+
+
+
+
+
+
+
+//pizza stuff here
+
+const pizzaReview = require("./cosmicReview");
+const pizzareview_data = require('data-store')({ path: process.cwd() + '/data/pizzaReviews.json' });
+
+app.get('/pizzaReviews', (req, res) => {
+    res.json(pizzaReview.getAllIDs());
+    return;
+});
+
+
+app.get('/pizzaReviews/:id', (req, res) => {
+    let b = pizzaReview.findByID(req.params.id);
+    if (b == null) {
+        res.status(404).send("Review not found");
+        return;
+    }
+    res.json(b);
+} );
+
+
+// consider doing something like const onSubmit = this function and then call that on onClick
+app.post('/pizzaReviews', (req, res) => {
+    //let {body} = req.body;
+
+    let review = pizzaReview.create(req.body.body);
+
+    if (review == null) {
+        res.status(400).send("Bad Request");
+        return;
+    }
+
+    pizzareview_data.set(req.body.body);
+    res.json(true);
+    return;
+});
+
+
+
+
+//ccs stuff here
+
+const ccsReview = require("./cosmicReview");
+const ccsreview_data = require('data-store')({ path: process.cwd() + '/data/ccsReviews.json' });
+
+app.get('/ccsReviews', (req, res) => {
+    res.json(ccsReview.getAllIDs());
+    return;
+});
+
+
+app.get('/ccsReviews/:id', (req, res) => {
+    let b = ccsReview.findByID(req.params.id);
+    if (b == null) {
+        res.status(404).send("Review not found");
+        return;
+    }
+    res.json(b);
+} );
+
+
+// consider doing something like const onSubmit = this function and then call that on onClick
+app.post('/ccsReviews', (req, res) => {
+    //let {body} = req.body;
+
+    let review = ccsReview.create(req.body.body);
+
+    if (review == null) {
+        res.status(400).send("Bad Request");
+        return;
+    }
+
+    ccsreview_data.set(req.body.body);
+    res.json(true);
+    return;
+});
+
+
+
+//sup dogs stuff here
+
+const supReview = require("./cosmicReview");
+const supreview_data = require('data-store')({ path: process.cwd() + '/data/supReviews.json' });
+
+app.get('/supReviews', (req, res) => {
+    res.json(supReview.getAllIDs());
+    return;
+});
+
+
+app.get('/supReviews/:id', (req, res) => {
+    let b = supReview.findByID(req.params.id);
+    if (b == null) {
+        res.status(404).send("Review not found");
+        return;
+    }
+    res.json(b);
+} );
+
+
+// consider doing something like const onSubmit = this function and then call that on onClick
+app.post('/supReviews', (req, res) => {
+    //let {body} = req.body;
+
+    let review = supReview.create(req.body.body);
+
+    if (review == null) {
+        res.status(400).send("Bad Request");
+        return;
+    }
+
+    supreview_data.set(req.body.body);
+    res.json(true);
+    return;
+});
+
+
+
+
+
+
+//spicy9 stuff here
+
+const spicyReview = require("./cosmicReview");
+const spicyreview_data = require('data-store')({ path: process.cwd() + '/data/spicyReviews.json' });
+
+app.get('/spicyReviews', (req, res) => {
+    res.json(spicyReview.getAllIDs());
+    return;
+});
+
+
+app.get('/spicyReviews/:id', (req, res) => {
+    let b = spicyReview.findByID(req.params.id);
+    if (b == null) {
+        res.status(404).send("Review not found");
+        return;
+    }
+    res.json(b);
+} );
+
+
+// consider doing something like const onSubmit = this function and then call that on onClick
+app.post('/spicyReviews', (req, res) => {
+    //let {body} = req.body;
+
+    let review = spicyReview.create(req.body.body);
+
+    if (review == null) {
+        res.status(400).send("Bad Request");
+        return;
+    }
+
+    spicyreview_data.set(req.body.body);
+    res.json(true);
+    return;
+});
+
+
+
+
+
+//lindas stuff here
+
+const lindasReview = require("./cosmicReview");
+const lindasreview_data = require('data-store')({ path: process.cwd() + '/data/lindasReviews.json' });
+
+app.get('/lindasReviews', (req, res) => {
+    res.json(lindasReview.getAllIDs());
+    return;
+});
+
+
+app.get('/lindasReviews/:id', (req, res) => {
+    let b = lindasReview.findByID(req.params.id);
+    if (b == null) {
+        res.status(404).send("Review not found");
+        return;
+    }
+    res.json(b);
+} );
+
+
+// consider doing something like const onSubmit = this function and then call that on onClick
+app.post('/lindasReviews', (req, res) => {
+    //let {body} = req.body;
+
+    let review = lindasReview.create(req.body.body);
+
+    if (review == null) {
+        res.status(400).send("Bad Request");
+        return;
+    }
+
+    lindasreview_data.set(req.body.body);
+    res.json(true);
+    return;
+});
+
+
+
+
+
+
+//med deli stuff here
+
+const medReview = require("./cosmicReview");
+const medreview_data = require('data-store')({ path: process.cwd() + '/data/medReviews.json' });
+
+app.get('/medReviews', (req, res) => {
+    res.json(medReview.getAllIDs());
+    return;
+});
+
+
+app.get('/medReviews/:id', (req, res) => {
+    let b = medReview.findByID(req.params.id);
+    if (b == null) {
+        res.status(404).send("Review not found");
+        return;
+    }
+    res.json(b);
+} );
+
+
+// consider doing something like const onSubmit = this function and then call that on onClick
+app.post('/medReviews', (req, res) => {
+    //let {body} = req.body;
+
+    let review = medReview.create(req.body.body);
+
+    if (review == null) {
+        res.status(400).send("Bad Request");
+        return;
+    }
+
+    medreview_data.set(req.body.body);
+    res.json(true);
+    return;
+});
+
+
+
+
+
+//purple bowl stuff here
+
+const purpReview = require("./cosmicReview");
+const purpreview_data = require('data-store')({ path: process.cwd() + '/data/purpReviews.json' });
+
+app.get('/purpReviews', (req, res) => {
+    res.json(purpReview.getAllIDs());
+    return;
+});
+
+
+app.get('/purpReviews/:id', (req, res) => {
+    let b = purpReview.findByID(req.params.id);
+    if (b == null) {
+        res.status(404).send("Review not found");
+        return;
+    }
+    res.json(b);
+} );
+
+
+// consider doing something like const onSubmit = this function and then call that on onClick
+app.post('/purpReviews', (req, res) => {
+    //let {body} = req.body;
+
+    let review = purpReview.create(req.body.body);
+
+    if (review == null) {
+        res.status(400).send("Bad Request");
+        return;
+    }
+
+    purpreview_data.set(req.body.body);
+    res.json(true);
+    return;
+});
+
+
