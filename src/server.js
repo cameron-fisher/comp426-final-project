@@ -218,7 +218,7 @@ app.get("/", (req, res) => {
 //topo stuff here
 
 
-const topoReview = require("./cosmicReview");
+const topoReview = require("./topoReview");
 const toporeview_data = require('data-store')({ path: process.cwd() + '/data/topoReviews.json' });
 
 app.get('/topoReviews', (req, res) => {
@@ -261,7 +261,7 @@ app.post('/topoReviews', (req, res) => {
 
 //pizza stuff here
 
-const pizzaReview = require("./cosmicReview");
+const pizzaReview = require("./pizzaReview");
 const pizzareview_data = require('data-store')({ path: process.cwd() + '/data/pizzaReviews.json' });
 
 app.get('/pizzaReviews', (req, res) => {
@@ -301,7 +301,7 @@ app.post('/pizzaReviews', (req, res) => {
 
 //ccs stuff here
 
-const ccsReview = require("./cosmicReview");
+const ccsReview = require("./ccsReview");
 const ccsreview_data = require('data-store')({ path: process.cwd() + '/data/ccsReviews.json' });
 
 app.get('/ccsReviews', (req, res) => {
@@ -340,7 +340,7 @@ app.post('/ccsReviews', (req, res) => {
 
 //sup dogs stuff here
 
-const supReview = require("./cosmicReview");
+const supReview = require("./supReview");
 const supreview_data = require('data-store')({ path: process.cwd() + '/data/supReviews.json' });
 
 app.get('/supReviews', (req, res) => {
@@ -382,7 +382,7 @@ app.post('/supReviews', (req, res) => {
 
 //spicy9 stuff here
 
-const spicyReview = require("./cosmicReview");
+const spicyReview = require("./spicyReview");
 const spicyreview_data = require('data-store')({ path: process.cwd() + '/data/spicyReviews.json' });
 
 app.get('/spicyReviews', (req, res) => {
@@ -423,7 +423,7 @@ app.post('/spicyReviews', (req, res) => {
 
 //lindas stuff here
 
-const lindasReview = require("./cosmicReview");
+const lindasReview = require("./lindasReview");
 const lindasreview_data = require('data-store')({ path: process.cwd() + '/data/lindasReviews.json' });
 
 app.get('/lindasReviews', (req, res) => {
@@ -465,7 +465,7 @@ app.post('/lindasReviews', (req, res) => {
 
 //med deli stuff here
 
-const medReview = require("./cosmicReview");
+const medReview = require("./medReview");
 const medreview_data = require('data-store')({ path: process.cwd() + '/data/medReviews.json' });
 
 app.get('/medReviews', (req, res) => {
@@ -506,7 +506,7 @@ app.post('/medReviews', (req, res) => {
 
 //purple bowl stuff here
 
-const purpReview = require("./cosmicReview");
+const purpReview = require("./purpReview");
 const purpreview_data = require('data-store')({ path: process.cwd() + '/data/purpReviews.json' });
 
 app.get('/purpReviews', (req, res) => {

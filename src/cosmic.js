@@ -61,9 +61,10 @@ function Cosmic() {
 
             <Container id="reviews">
                 <Tile isAncestor>
-                    <Tile isParent isVertical isSize={12} id="reviews-parent" dangerouslySetInnerHTML={{__html: generateReviews(review_data)}}>
+                <Tile isParent isVertical isSize={12} id="reviews-parent">
+                    {/* <Tile isParent isVertical isSize={12} id="reviews-parent" dangerouslySetInnerHTML={{__html: generateReviews(review_data)}}> */}
                         {/* dangerouslySetInnerHTML={{__html: generateReviews(review_data)}} */}
-                        {/* {ReactHtmlParser(generateReviews(review_data))} */}
+                        {ReactHtmlParser(generateReviews(review_data))}
                     </Tile>
                 </Tile>
             </Container>
