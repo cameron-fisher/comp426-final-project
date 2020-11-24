@@ -4,83 +4,45 @@ import { Title, Tile, Box, Container, Image, Button, Subtitle, Input } from 'blo
 import 'bulma/css/bulma.css';
 import { Link } from "react-router-dom";
 import axios from 'axios';
-// import { Parser } from 'htmlparser2';
 import ReactHtmlParser from 'react-html-parser';
 import generateReviews from './generateReviews';
-// import '/data/users.json';
 
-// const review_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
 const review_data = require('./data/cosmicReviews.json');
 
-// export const loadReviews = function () {
-//     console.log('hi')
-//     console.log(review_data)
-//     generateReviews(review_data)
-//     // let result = await axios({
-//     //     method: 'get',
-//     //     url: "http://localhost:5000/cosmicReviews/", //
-//     //     //url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
-//     //     //withCredentials: true
-//     //     /* ,
-//     //     params: {
-//     //         where: { 
-//     //             type: 'review' 
-//     //         }
-//     //     }
-//     //     */
-//     // });
+export const loadReviews = function () {
+    //need a line to replace tile isparent element in the dom
+    ReactDOM.render(ReactHtmlParser(generateReviews(review_data)), document.getElementById('reviews-parent'));
 
-//     // //document.getElementById("reviews").append(review_data.get(0));
-    
-//     // //here it is 3 times becaue we have 3 place holders
-//     // //when we get more update the amount of reviews we want
-
-//     // if(3 >= review_data.length)
-//     // {
-//     //     document.getElementById('postedReview1').innerText = review_data[review_data.length-1]; 
-//     //     document.getElementById('postedReview2').innerText = review_data[review_data.length-2]; 
-//     //     document.getElementById('postedReview3').innerText = review_data[review_data.length-3]; 
-//     // }
-//     // else if(2 == review_data.length)
-//     // {
-//     //     document.getElementById('postedReview1').innerText = review_data[review_data.length-1]; 
-//     //     document.getElementById('postedReview2').innerText = review_data[review_data.length-2]; 
-//     // }
-//     // else if(1 == review_data.length)
-//     // {
-//     //     document.getElementById('postedReview1').innerText = review_data[review_data.length-1]; 
-//     // }
-// }
+}
 
 //add in url to axios function
 export const submitClicked = function() {
     //composeReview(document.getElementById("textArea").value.toString());
-    //composeReview();
+    composeReview();
     //console.log(review_data)
     // return generateReviews(review_data)
-    ReactDOM.render(ReactHtmlParser(generateReviews(review_data)), document.getElementById('reviews-parent'));
+    //ReactDOM.render(ReactHtmlParser(generateReviews(review_data)), document.getElementById('reviews-parent'));
 
     //if above doesn't work try:
     //ReactDOM.render(generateReviews(review_data), document.getElementById('reviews-parent'));
 }
 
 //add URL
-// export const composeReview = async function() {
-//     let bodyText = document.getElementById("textArea").value.toString();
-//     //let bodyText = "Test to see if this is the problem";
+export const composeReview = async function() {
+    let bodyText = document.getElementById("textArea").value.toString();
+    //let bodyText = "Test to see if this is the problem";
 
-//     //let bodyText = "test text";
-//    await axios({
-//        method: 'post',
-//        url: "http://localhost:5000/cosmicReviews/",
-//        data: {
-//            "body": bodyText
-//        }
-//    });
+    //let bodyText = "test text";
+   await axios({
+       method: 'post',
+       url: "http://localhost:5000/cosmicReviews/",
+       data: {
+           "body": bodyText
+       }
+   });
 
-//    loadReviews();
- 
-// }
+   loadReviews();
+}
 
 function Cosmic() {
     return (
@@ -105,9 +67,9 @@ function Cosmic() {
 
             <Container id="reviews">
                 <Tile isAncestor>
-                    <Tile isParent isVertical isSize={12} id="reviews-parent">
+                    <Tile isParent isVertical isSize={12} id="reviews-parent" dangerouslySetInnerHTML={{__html: generateReviews(review_data)}}>
                         {/* dangerouslySetInnerHTML={{__html: generateReviews(review_data)}} */}
-                        {ReactHtmlParser(generateReviews(review_data))}
+                        {/* {ReactHtmlParser(generateReviews(review_data))} */}
                     </Tile>
                 </Tile>
             </Container>
