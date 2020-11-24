@@ -4,6 +4,8 @@ import 'bulma/css/bulma.css';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
+const review_data = require('data-store')({ path: process.cwd() + '/data/cosmicReviews.json' });
+
 
 //convert this and the other one to non axios
 export const loadReviews = async function () {
@@ -21,16 +23,20 @@ export const loadReviews = async function () {
         */
     });
 
+    document.getElementById("reviews").append(review_data.get(0));
+    /*
     //here it is 3 times becaue we have 3 place holders
     //when we get more update the amount of reviews we want
     for(let i = 0; i < 3; i++)
     {
         if(i < result.data.length)
         {
-            document.getElementById('postedReview'+i).innerText = result.data[i];
+            //document.getElementById('postedReview'+i).innerText = result.data[i];
+            document.getElementById("reviews").append(review_data.get(0));
         }
         //within this place the results in each of the preset review spots and maybe append extra reviews depending on how we want to do it
     }
+    */
 }
 
 //do window.location.reload(false); whenever we call loadReviews or change any element of the page
@@ -92,7 +98,7 @@ function Cosmic() {
             </Box>
             
 
-            <Container>
+            <Container id="reviews">
                 <Tile isAncestor>
                     <Tile isParent isVertical isSize={12}>
                         <Tile isChild>
