@@ -52,7 +52,7 @@ function PizzaPress() {
             </Container>
 
             <Box hasTextAlign='centered' className="is-shadowless">
-                <Subtitle isSize={5}>Leave a review for Pizza Press!</Subtitle>
+                <Subtitle isSize={5}>Submit your thoughts and refresh to leave a review for Pizza Press!</Subtitle>
                 <Input type="text" id="textArea4" placeholder='' isSize='large'/>
                 <Button onClick={submitClicked} isColor='primary' id="sendreview4" className="mt-4 mr-3">Submit</Button>
                 <Button isColor='warning' className="mt-4">Cancel</Button>

@@ -52,7 +52,7 @@ function CCS() {
             </Container>
 
             <Box hasTextAlign='centered' className="is-shadowless">
-                <Subtitle isSize={5}>Leave a review for Carolina Coffee Shop!</Subtitle>
+                <Subtitle isSize={5}>Submit your thoughts and refresh to leave a review for Carolina Coffee Shop!</Subtitle>
                 <Input type="text" id="textArea1" placeholder='' isSize='large'/>
                 <Button onClick={submitClicked} isColor='primary' id="sendreview1" className="mt-4 mr-3">Submit</Button>
                 <Button isColor='warning' className="mt-4">Cancel</Button>

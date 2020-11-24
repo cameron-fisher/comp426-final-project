@@ -52,7 +52,7 @@ function Cosmic() {
             </Container>
 
             <Box hasTextAlign='centered' className="is-shadowless">
-                <Subtitle isSize={5}>Leave a review for Cosmic Cantina!</Subtitle>
+                <Subtitle isSize={5}>Submit your thoughts and refresh to leave a review for Cosmic Cantina!</Subtitle>
                 <Input type="text" id="textArea" placeholder='' isSize='large'/>
                 <Button onClick={submitClicked} isColor='primary' id="sendreview" className="mt-4 mr-3">Submit</Button>
                 <Button isColor='warning' className="mt-4">Cancel</Button>

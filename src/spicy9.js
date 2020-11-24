@@ -52,7 +52,7 @@ function Spicy9() {
             </Container>
 
             <Box hasTextAlign='centered' className="is-shadowless">
-                <Subtitle isSize={5}>Leave a review for Spicy 9!</Subtitle>
+                <Subtitle isSize={5}>Submit your thoughts and refresh to leave a review for Spicy 9!</Subtitle>
                 <Input type="text" id="textArea6" placeholder='' isSize='large'/>
                 <Button onClick={submitClicked} isColor='primary' id="sendreview6" className="mt-4 mr-3">Submit</Button>
                 <Button isColor='warning' className="mt-4">Cancel</Button>

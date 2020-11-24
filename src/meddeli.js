@@ -52,7 +52,7 @@ function MedDeli() {
             </Container>
 
             <Box hasTextAlign='centered' className="is-shadowless">
-                <Subtitle isSize={5}>Leave a review for Mediterranean Deli!</Subtitle>
+                <Subtitle isSize={5}>Submit your thoughts and refresh to leave a review for Mediterranean Deli!</Subtitle>
                 <Input type="text" id="textArea3" placeholder='' isSize='large'/>
                 <Button onClick={submitClicked} isColor='primary' id="sendreview3" className="mt-4 mr-3">Submit</Button>
                 <Button isColor='warning' className="mt-4">Cancel</Button>

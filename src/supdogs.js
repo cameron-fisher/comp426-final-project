@@ -52,7 +52,7 @@ function SupDogs() {
             </Container>
 
             <Box hasTextAlign='centered' className="is-shadowless">
-                <Subtitle isSize={5}>Leave a review for Sup Dogs!</Subtitle>
+                <Subtitle isSize={5}>Submit your thoughts and refresh to leave a review for Sup Dogs!</Subtitle>
                 <Input type="text" id="textArea7" placeholder='' isSize='large'/>
                 <Button onClick={submitClicked} isColor='primary' id="sendreview7" className="mt-4 mr-3">Submit</Button>
                 <Button isColor='warning' className="mt-4">Cancel</Button>
