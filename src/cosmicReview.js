@@ -1,4 +1,4 @@
-const review_data = require('data-store')({ path: process.cwd() + 'data/cosmicReview.json' });
+const review_data = require('data-store')({ path: process.cwd() + 'data/cosmicReviews.json' });
 
 class cosmicReview
 {
