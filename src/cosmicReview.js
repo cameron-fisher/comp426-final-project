@@ -1,4 +1,4 @@
-const review_data = require('data-store')({ path: process.cwd() + '/data/cosmicReview.json' });
+const review_data = require('data-store')({ path: process.cwd() + 'data/cosmicreview.json' });
 
 class cosmicReview
 {
@@ -7,6 +7,17 @@ class cosmicReview
         this.id = id;
         this.body = body;
     }
+
+    /*
+    update (review) {
+        this.review = review;
+        review_data.set(this.id.toString(), this);
+    }
+
+    delete () {
+        review_data.del(this.id.toString());
+    }
+    */
 }
 
 cosmicReview.getAllIDs = () => {

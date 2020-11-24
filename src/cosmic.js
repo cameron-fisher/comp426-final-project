@@ -6,7 +6,7 @@ import axios from 'axios';
 //import http from "http";
 //import express from 'express';
 
-
+/*
 const express = require('express');
 const app = express();
 const cosmicReview = require('./cosmicReview.js');
@@ -41,7 +41,6 @@ app.listen(port, () => {
 
 });
 
-
 // consider doing something like const onSubmit = this function and then call that on onClick
 app.post('/cosmicReview', (req, res) => {
     let {body} = req.body;
@@ -54,14 +53,14 @@ app.post('/cosmicReview', (req, res) => {
     }
     return res.json(review);
 });
-
+*/
 
 //convert this and the other one to non axios
 export const loadReviews = async function () {
     let result = await axios({
         method: 'get',
-        //url: "https://localhost:3001/public",
-        url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
+        url: "https://http://localhost:5000/cosmicReview/", //
+        //url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
         withCredentials: true/* ,
         params: {
             where: { 
@@ -105,12 +104,12 @@ export const composeReview = async function() {
 
    await axios({
        method: 'post',
-       //url: "https://localhost:3001/public",
-       url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
+       url: "https://http://localhost:5000/cosmicReview/",
+       //url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
        withCredentials: true,
        data: {
            //type: 'review',
-           body: bodyText
+           "body": bodyText
        }
    });
 
