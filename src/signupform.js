@@ -38,8 +38,10 @@ class SignupForm extends React.Component {
     async doSignup() {
         let username = this.state.username;
         let password = this.state.password;
+
         
-        try {
+        
+        
             if (this.state.loggedIn === false) {
                 const result = await axios.post('http://localhost:5000/signup', {"user": username, "password": password});
                 alert("Welcome " + username);
@@ -48,9 +50,7 @@ class SignupForm extends React.Component {
             } else {
                 alert("You are already logged in");
             }
-        } catch (e) {
-            alert("This user already exists");
-        }
+       
 
     }
 
