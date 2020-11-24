@@ -49,10 +49,10 @@ export const submitClicked = function() {
 
 //add URL
 export const composeReview = async function() {
-    //let bodyText = document.getElementById("textArea").value.toString();
+    let bodyText = document.getElementById("textArea").value.toString();
     //let bodyText = "Test to see if this is the problem";
 
-    let bodyText = "test text";
+    //let bodyText = "test text";
    await axios({
        method: 'post',
        url: "http://localhost:5000/cosmicReviews/",
