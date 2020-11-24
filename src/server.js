@@ -22,6 +22,43 @@ const Secret = require("./Secret");
 
 const login_data = require('data-store')({ path: process.cwd() + '/data/users.json' });
 
+const cosmicReview = require("./cosmicReview");
+const review_data = require('data-store')({ path: process.cwd() + '/data/cosmicReviews.json' });
+
+app.get('/cosmicReviews', (req, res) => {
+    res.json(cosmicReview.getAllIDs());
+    return;
+});
+
+
+app.get('/cosmicReviews/:id', (req, res) => {
+    let b = cosmicReview.findByID(req.params.id);
+    if (b == null) {
+        res.status(404).send("Review not found");
+        return;
+    }
+    res.json(b);
+} );
+
+
+// consider doing something like const onSubmit = this function and then call that on onClick
+app.post('/cosmicReviews', (req, res) => {
+    //let {body} = req.body;
+
+    let review = cosmicReview.create(req.body.body);
+
+    if (review == null) {
+        res.status(400).send("Bad Request");
+        return;
+    }
+
+    login_data.set(req.body.body);
+    res.json(true);
+    return;
+
+    //return res.json(review);
+});
+
 app.post('/login', (req, res) => {
 
     let user = req.body.user;
