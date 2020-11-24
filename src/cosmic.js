@@ -59,7 +59,7 @@ app.post('/cosmicReview', (req, res) => {
 export const loadReviews = async function () {
     let result = await axios({
         method: 'get',
-        url: "https://http://localhost:5000/cosmicReview/", //
+        url: "https://http://localhost:3000/cosmicReview/", //
         //url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
         withCredentials: true/* ,
         params: {
@@ -104,7 +104,7 @@ export const composeReview = async function() {
 
    await axios({
        method: 'post',
-       url: "https://http://localhost:5000/cosmicReview/",
+       url: "https://http://localhost:3000/cosmicReview/",
        //url: "https://stark-shelf-53955.herokuapp.com/#/cosmicReview/",
        withCredentials: true,
        data: {
