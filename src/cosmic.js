@@ -21,20 +21,26 @@ export const loadReviews = async function () {
         */
     });
 
-    document.getElementById("reviews").append(review_data.get(0));
-    /*
+    //document.getElementById("reviews").append(review_data.get(0));
+    
     //here it is 3 times becaue we have 3 place holders
     //when we get more update the amount of reviews we want
-    for(let i = 0; i < 3; i++)
+
+    if(3 >= review_data.length)
     {
-        if(i < result.data.length)
-        {
-            //document.getElementById('postedReview'+i).innerText = result.data[i];
-            document.getElementById("reviews").append(review_data.get(0));
-        }
-        //within this place the results in each of the preset review spots and maybe append extra reviews depending on how we want to do it
+        document.getElementById('postedReview1').innerText = review_data[review_data.length-1]; 
+        document.getElementById('postedReview2').innerText = review_data[review_data.length-2]; 
+        document.getElementById('postedReview3').innerText = review_data[review_data.length-3]; 
     }
-    */
+    else if(2 == review_data.length)
+    {
+        document.getElementById('postedReview1').innerText = review_data[review_data.length-1]; 
+        document.getElementById('postedReview2').innerText = review_data[review_data.length-2]; 
+    }
+    else if(1 == review_data.length)
+    {
+        document.getElementById('postedReview1').innerText = review_data[review_data.length-1]; 
+    }
 }
 
 //add in url to axios function
