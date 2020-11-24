@@ -52,7 +52,7 @@ app.post('/cosmicReviews', (req, res) => {
         return;
     }
 
-    login_data.set(req.body.body);
+    review_data.set(req.body.body);
     res.json(true);
     return;
 
