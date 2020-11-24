@@ -10,7 +10,7 @@ import generateReviews from './generateReviews';
 const review_data = require('./data/pizzaReviews.json');
 
 export const loadReviews = function () {
-    ReactDOM.render(ReactHtmlParser(generateReviews(review_data)), document.getElementById('reviews-parent'));
+    ReactDOM.render(ReactHtmlParser(generateReviews(review_data)), document.getElementById('reviews-parent4'));
 }
 
 //add in url to axios function
@@ -22,7 +22,7 @@ export const submitClicked = function() {
 
 //add URL
 export const composeReview = async function() {
-    let bodyText = document.getElementById("textArea").value.toString();
+    let bodyText = document.getElementById("textArea4").value.toString();
     //let bodyText = "Test to see if this is the problem";
 
     //let bodyText = "test text";
@@ -53,15 +53,15 @@ function PizzaPress() {
 
             <Box hasTextAlign='centered' className="is-shadowless">
                 <Subtitle isSize={5}>Leave a review for Pizza Press!</Subtitle>
-                <Input type="text" id="textArea" placeholder='' isSize='large'/>
-                <Button onClick={submitClicked} isColor='primary' id="sendreview" className="mt-4 mr-3">Submit</Button>
+                <Input type="text" id="textArea4" placeholder='' isSize='large'/>
+                <Button onClick={submitClicked} isColor='primary' id="sendreview4" className="mt-4 mr-3">Submit</Button>
                 <Button isColor='warning' className="mt-4">Cancel</Button>
             </Box>
             
 
             <Container>
                 <Tile isAncestor>
-                    <Tile isParent isVertical isSize={12} id="reviews-parent" dangerouslySetInnerHTML={{__html: generateReviews(review_data)}}>
+                    <Tile isParent isVertical isSize={12} id="reviews-parent4" dangerouslySetInnerHTML={{__html: generateReviews(review_data)}}>
                         
                     </Tile>
                 </Tile>

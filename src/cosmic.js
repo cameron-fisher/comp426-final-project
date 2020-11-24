@@ -23,7 +23,9 @@ export const submitClicked = function() {
 
 //add URL
 export const composeReview = async function() {
+    
     let bodyText = document.getElementById("textArea").value.toString();
+    //console.log(bodyText)
     
    await axios({
        method: 'post',
